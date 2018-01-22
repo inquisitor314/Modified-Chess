@@ -44,9 +44,4 @@ public class CBTest {
 		fail("Not yet implemented");
 	}
 
-	@Test
-	public void testMain() {
-		fail("Not yet implemented");
-	}
-
 }

@@ -80,8 +80,8 @@ public class ChessBoard {
 	    ChessBoard board = new ChessBoard();
 	    board.initialize();
 	    System.out.println(board);
-	    board.move("c2", "c4");
-	    System.out.println(board);
+	    //board.move("c2", "c4");
+	    //System.out.println(board);
 	}
 	
 }
