@@ -9,8 +9,12 @@ public class King extends ChessPiece {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		if(color.equals(Color.WHITE)) {
+			return "\u2654";
+		}
+		else {
+			return "\u265A";
+		}
 	}
 
 	@Override
@@ -18,5 +22,11 @@ public class King extends ChessPiece {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	public static void main(String[] args) {
+		King wk = new King(null, Color.WHITE);
+		King bk = new King(null, Color.BLACK);
+		System.out.println(wk.toString());
+		System.out.println(bk.toString());
+	}
 }
