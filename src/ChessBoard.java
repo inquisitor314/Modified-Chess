@@ -8,7 +8,7 @@ public class ChessBoard {
 	}
 	
 	public void initialize() {
-		
+		board[0][3] = new King(null, Color.WHITE);
 	}
 	
 	//throws IllegalPositionException

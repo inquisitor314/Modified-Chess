@@ -7,9 +7,6 @@ public abstract class ChessPiece {
 	protected int column;
 	protected Color color;
 
-	public enum Color {
-		WHITE, BLACK;
-	}	
 	
 	public ChessPiece(ChessBoard board, Color color) {
 		this.board = board;
