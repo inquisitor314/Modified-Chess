@@ -12,21 +12,32 @@ public class King extends ChessPiece {
 		if(color.equals(Color.WHITE)) {
 			return "\u2654";
 		}
-		else {
+		else if(color.equals(Color.BLACK)){
 			return "\u265A";
+		}
+		else {
+			return null;
 		}
 	}
 
+	public boolean equals(Object other) {
+		if(!(other instanceof King)) {
+			System.out.println("Not a piece.");
+			return false;
+		}
+		else {
+			King otherPiece = (King) other;
+			if(otherPiece.toString().equals(this.toString())) {
+				return true;
+			}
+			return false;
+		}
+	}
+	
 	@Override
 	public ArrayList<String> legalMoves() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
-	public static void main(String[] args) {
-		King wk = new King(null, Color.WHITE);
-		King bk = new King(null, Color.BLACK);
-		System.out.println(wk.toString());
-		System.out.println(bk.toString());
-	}
 }

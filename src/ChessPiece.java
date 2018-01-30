@@ -26,6 +26,10 @@ public abstract class ChessPiece {
 		
 	}
 	
+	public void setBoard(ChessBoard board) {
+		this.board = board;
+	}
+	
 	abstract public String toString();
 	
 	abstract public ArrayList<String> legalMoves();
