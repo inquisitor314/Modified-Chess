@@ -41,6 +41,42 @@ public class ChessBoard {
 		placePiece(new Pawn(this, Color.BLACK), "f7");
 		placePiece(new Pawn(this, Color.BLACK), "g7");
 		placePiece(new Pawn(this, Color.BLACK), "h7");
+		try {
+			getPiece("a1").setPosition("a1");
+			getPiece("b1").setPosition("b1");
+			getPiece("c1").setPosition("c1");
+			getPiece("d1").setPosition("d1");
+			getPiece("e1").setPosition("e1");
+			getPiece("f1").setPosition("f1");
+			getPiece("g1").setPosition("g1");
+			getPiece("h1").setPosition("h1");
+			getPiece("a2").setPosition("a2");
+			getPiece("b2").setPosition("b2");
+			getPiece("c2").setPosition("c2");
+			getPiece("d2").setPosition("d2");
+			getPiece("e2").setPosition("e2");
+			getPiece("f2").setPosition("f2");
+			getPiece("g2").setPosition("g2");
+			getPiece("h2").setPosition("h2");
+			getPiece("a7").setPosition("a7");
+			getPiece("b7").setPosition("b7");
+			getPiece("c7").setPosition("c7");
+			getPiece("d7").setPosition("d7");
+			getPiece("e7").setPosition("e7");
+			getPiece("f7").setPosition("f7");
+			getPiece("g7").setPosition("g7");
+			getPiece("h7").setPosition("h7");
+			getPiece("a8").setPosition("a8");
+			getPiece("b8").setPosition("b8");
+			getPiece("c8").setPosition("c8");
+			getPiece("d8").setPosition("d8");
+			getPiece("e8").setPosition("e8");
+			getPiece("f8").setPosition("f8");
+			getPiece("g8").setPosition("g8");
+			getPiece("h8").setPosition("h8");
+		} catch (IllegalPositionException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	//throws IllegalPositionException
@@ -64,12 +100,14 @@ public class ChessBoard {
 			if(getPiece(position) == null) {
 				//System.out.println("Empty space");
 				board[coordinates[0]][coordinates[1]] = piece;
+				piece.setPosition(position);
 				return true;
 			}
 			else if(!getPiece(position).getColor().equals(piece.getColor())) {
 				System.out.println("Taking piece");
 				getPiece(position).setBoard(null);
 				board[coordinates[0]][coordinates[1]] = piece;
+				piece.setPosition(position);
 				return true;
 			}
 			else {
@@ -145,7 +183,7 @@ public class ChessBoard {
 		}
 	}
 
-	public int[] coordinateTranslator(String coordinate) {
+	private int[] coordinateTranslator(String coordinate) {
 		int[] finalCoordinates = new int[2];
 		String[] pieces = coordinate.split("");
 		if(pieces.length != 2) {
@@ -184,6 +222,9 @@ public class ChessBoard {
 		}
 		try {
 			finalCoordinates[0] = Integer.parseInt(pieces[1]) - 1;
+			if (finalCoordinates[0] < 0 || finalCoordinates[0] > 7) {
+				finalCoordinates[0] = -1;
+			}
 		} catch(NumberFormatException e) {
 			finalCoordinates[0] = -1;
 		}
@@ -251,7 +292,7 @@ public class ChessBoard {
 		//			System.out.println(e.getMessage());
 		//		}
 				try {
-					board.move("c4", "a8");
+					board.move("a2", "b3");
 				} catch (IllegalMoveException e) {
 					System.out.println(e.getMessage());
 				}
@@ -262,7 +303,15 @@ public class ChessBoard {
 		//		board.move("c2", "c4");
 		//		int[] coordinates = board.coordinateTranslator("a5");
 		//		System.out.println("coordinates: " + coordinates[0] + "," + coordinates[1]);
-		System.out.println(board);
+		try {
+			System.out.println(board.getPiece("a1"));
+			System.out.println(board.getPiece("a1").getPosition());
+			board.getPiece("a1").legalMoves();
+		} catch (IllegalPositionException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+		//System.out.println(board);
 	}
 
 }

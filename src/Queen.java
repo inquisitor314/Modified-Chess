@@ -36,8 +36,8 @@ public class Queen extends ChessPiece {
 	
 	@Override
 	public ArrayList<String> legalMoves() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<String> moves = new ArrayList<String>();
+		return moves;
 	}
 
 }

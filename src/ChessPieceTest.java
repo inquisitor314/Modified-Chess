@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class CPTest {
+public class ChessPieceTest {
 
 	@Before
 	public void setUp() throws Exception {
@@ -25,7 +25,7 @@ public class CPTest {
 	}
 
 	@Test
-	public void testGetPosition() {
+	public void testCoordinateTranslator() {
 		fail("Not yet implemented");
 	}
 
@@ -35,12 +35,17 @@ public class CPTest {
 	}
 
 	@Test
-	public void testToString() {
+	public void testFindCoordinate() {
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testLegalMoves() {
+	public void testGetPosition() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetBoard() {
 		fail("Not yet implemented");
 	}
 
