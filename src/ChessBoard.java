@@ -291,27 +291,29 @@ public class ChessBoard {
 		//		} catch (IllegalPositionException e) {
 		//			System.out.println(e.getMessage());
 		//		}
+		//		System.out.println(board);
 				try {
-					board.move("a2", "b3");
+					board.move("b2", "b3");
+					board.move("d2", "d3");
 				} catch (IllegalMoveException e) {
 					System.out.println(e.getMessage());
 				}
 		//      Knight k = new Knight(board, Color.WHITE);
 		//		board.placePiece(k, "d4");
 		//		System.out.println(board.equals(board2));
-		//		System.out.println(board);
+				System.out.println(board);
 		//		board.move("c2", "c4");
 		//		int[] coordinates = board.coordinateTranslator("a5");
 		//		System.out.println("coordinates: " + coordinates[0] + "," + coordinates[1]);
 		try {
-			System.out.println(board.getPiece("a1"));
-			System.out.println(board.getPiece("a1").getPosition());
-			board.getPiece("a1").legalMoves();
+			System.out.println(board.getPiece("c1"));
+			System.out.println(board.getPiece("c1").getPosition());
+			board.getPiece("c1").legalMoves();
 		} catch (IllegalPositionException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());
 		}
-		//System.out.println(board);
+		System.out.println(board);
 	}
 
 }

@@ -38,10 +38,10 @@ public class Pawn extends ChessPiece {
 	public ArrayList<String> legalMoves() {
 		ArrayList<String> moves = new ArrayList<String>();
 		if(color.equals(Color.WHITE)) {
-			String upTwo = findCoordinate(row + 3, column);
-			String upOne = findCoordinate(row + 2, column);
-			String leftDiag = findCoordinate(row + 2, column - 1);
-			String rightDiag = findCoordinate(row + 2, column + 1);
+			String upTwo = findCoordinate(row + 2, column);
+			String upOne = findCoordinate(row + 1, column);
+			String leftDiag = findCoordinate(row + 1, column - 1);
+			String rightDiag = findCoordinate(row + 1, column + 1);
 			System.out.println(upTwo + "," + upOne + "," + leftDiag + "," + rightDiag);
 			try {
 				if(!upTwo.contains("bad")) {

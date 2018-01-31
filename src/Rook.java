@@ -40,62 +40,70 @@ public class Rook extends ChessPiece {
 		try {
 			for(int i = 1; i < 8; i++) {
 				String upToAdd = findCoordinate(row + i, column);
-				if(board.getPiece(upToAdd) == null) {
-					System.out.println("Adding empty space at " + upToAdd);
-					moves.add(upToAdd);
-				}
-				else if(board.getPiece(upToAdd).getColor().equals(getColor())) {
-					break;
-				}
-				else if(!board.getPiece(upToAdd).getColor().equals(getColor())) {
-					System.out.println("Adding enemy space at " + upToAdd);
-					moves.add(upToAdd);
-					break;
+				if(!upToAdd.contains("bad")) {
+					if(board.getPiece(upToAdd) == null) {
+						System.out.println("Adding empty space at " + upToAdd);
+						moves.add(upToAdd);
+					}
+					else if(board.getPiece(upToAdd).getColor().equals(getColor())) {
+						break;
+					}
+					else if(!board.getPiece(upToAdd).getColor().equals(getColor())) {
+						System.out.println("Adding enemy space at " + upToAdd);
+						moves.add(upToAdd);
+						break;
+					}
 				}
 			}
 			for(int i = 1; i < 8; i++) {
 				String downToAdd = findCoordinate(row - i, column);
-				if(board.getPiece(downToAdd) == null) {
-					System.out.println("Adding empty space at " + downToAdd);
-					moves.add(downToAdd);
-				}
-				else if(board.getPiece(downToAdd).getColor().equals(getColor())) {
-					break;
-				}
-				else if(!board.getPiece(downToAdd).getColor().equals(getColor())) {
-					System.out.println("Adding enemy space at " + downToAdd);
-					moves.add(downToAdd);
-					break;
+				if(!downToAdd.contains("bad")) {
+					if(board.getPiece(downToAdd) == null) {
+						System.out.println("Adding empty space at " + downToAdd);
+						moves.add(downToAdd);
+					}
+					else if(board.getPiece(downToAdd).getColor().equals(getColor())) {
+						break;
+					}
+					else if(!board.getPiece(downToAdd).getColor().equals(getColor())) {
+						System.out.println("Adding enemy space at " + downToAdd);
+						moves.add(downToAdd);
+						break;
+					}
 				}
 			}
 			for(int i = 1; i < 8; i++) {
 				String leftToAdd = findCoordinate(row, column - i);
-				if(board.getPiece(leftToAdd) == null) {
-					System.out.println("Adding empty space at " + leftToAdd);
-					moves.add(leftToAdd);
-				}
-				else if(board.getPiece(leftToAdd).getColor().equals(getColor())) {
-					break;
-				}
-				else if(!board.getPiece(leftToAdd).getColor().equals(getColor())) {
-					System.out.println("Adding enemy space at " + leftToAdd);
-					moves.add(leftToAdd);
-					break;
+				if(!leftToAdd.contains("bad")) {
+					if(board.getPiece(leftToAdd) == null) {
+						System.out.println("Adding empty space at " + leftToAdd);
+						moves.add(leftToAdd);
+					}
+					else if(board.getPiece(leftToAdd).getColor().equals(getColor())) {
+						break;
+					}
+					else if(!board.getPiece(leftToAdd).getColor().equals(getColor())) {
+						System.out.println("Adding enemy space at " + leftToAdd);
+						moves.add(leftToAdd);
+						break;
+					}
 				}
 			}
 			for(int i = 1; i < 8; i++) {
 				String rightToAdd = findCoordinate(row, column + i);
-				if(board.getPiece(rightToAdd) == null) {
-					System.out.println("Adding empty space at " + rightToAdd);
-					moves.add(rightToAdd);
-				}
-				else if(board.getPiece(rightToAdd).getColor().equals(getColor())) {
-					break;
-				}
-				else if(!board.getPiece(rightToAdd).getColor().equals(getColor())) {
-					System.out.println("Adding enemy space at " + rightToAdd);
-					moves.add(rightToAdd);
-					break;
+				if(!rightToAdd.contains("bad")) {
+					if(board.getPiece(rightToAdd) == null) {
+						System.out.println("Adding empty space at " + rightToAdd);
+						moves.add(rightToAdd);
+					}
+					else if(board.getPiece(rightToAdd).getColor().equals(getColor())) {
+						break;
+					}
+					else if(!board.getPiece(rightToAdd).getColor().equals(getColor())) {
+						System.out.println("Adding enemy space at " + rightToAdd);
+						moves.add(rightToAdd);
+						break;
+					}
 				}
 			}
 		} catch (IllegalPositionException e) {

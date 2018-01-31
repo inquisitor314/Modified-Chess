@@ -1,4 +1,5 @@
 
+@SuppressWarnings("serial")
 public class IllegalPositionException extends Exception {
 
 	public IllegalPositionException() {
